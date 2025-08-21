@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Futoast - Lightweight Toast Notification Library</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="assets/logo.svg" type="image/x-icon">
+  </head>
+  <body>
+    <div class="topscroll"></div>
+    <!-- Header -->
+    <header class="header">
+      <div class="container header-container">
+        <a href="#" class="logo">
+          <span class="logo-icon"><i class="fas fa-bolt"></i></span>
+          <span class="header_heading">Futoast</span>
+        </a>
+
+        <nav class="nav">
+          <a href="#features" class="nav-link">Features</a>
+          <a href="#installation" class="nav-link">Installation</a>
+          <a href="#usage" class="nav-link">Usage</a>
+          <a href="#examples" class="nav-link">Examples</a>
+          <a href="#api" class="nav-link">API</a>
+          <a
+            href="https://github.com/yourusername/futoast"
+            target="_blank"
+            class="nav-link"
+          >
+            <i class="fab fa-github" style="font-size: 25px"></i>
+          </a>
+          <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon" style="font-size: 25px"></i>
+          </button>
+        </nav>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container text-center">
+        <h1 class="hero-title">Futoast</h1>
+        <p class="hero-subtitle">
+          A lightweight, customizable toast notification library for modern web
+          apps
+        </p>
+        <div class="hero-buttons">
+          <a
+            href="#installation"
+            class="btn btn-outline"
+            style="color: white; border-color: white"
+            >Get Started</a
+          >
+          <a
+            href="#examples"
+            class="btn btn-primary"
+            style="background-color: white; color: var(--primary)"
+            >View Examples</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="content">
+        <!-- Features Section -->
+        <section id="features" class="section">
+          <h2>Why Choose Futoast?</h2>
+          <p class="mb-4">
+            Futoast is a lightweight, feature-rich toast notification library
+            designed for modern web applications with framework support.
+          </p>
+
+          <div class="features">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <h3>Lightweight</h3>
+              <p>
+                Just 5KB gzipped with zero dependencies. Perfect for
+                performance-critical applications.
+              </p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-puzzle-piece"></i>
+              </div>
+              <h3>Framework Support</h3>
+              <p>
+                Works with React, Vue, Angular, Django, and plain JavaScript out
+                of the box.
+              </p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-palette"></i>
+              </div>
+              <h3>Customizable</h3>
+              <p>
+                Easily customize appearance, behavior, and animations to match
+                your app's design.
+              </p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h3>Responsive</h3>
+              <p>
+                Adapts to different screen sizes with mobile-specific
+                positioning and styling.
+              </p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-magic"></i>
+              </div>
+              <h3>Rich Features</h3>
+              <p>
+                Progress bars, drag & drop, buttons, sounds, dark mode, and much
+                more.
+              </p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <h3>Simple API</h3>
+              <p>
+                Intuitive API with shortcut methods for common notification
+                types.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Installation Section -->
+        <section id="installation" class="section">
+          <h2>Installation</h2>
+          <p>Futoast can be installed via CDN, npm, or downloaded directly.</p>
+
+          <div class="tabs mt-3">
+            <div class="tab active" data-tab="cdn">CDN</div>
+            <div class="tab" data-tab="npm">NPM</div>
+            <div class="tab" data-tab="download">Download</div>
+          </div>
+
+          <div class="tab-content active" id="cdn">
+            <div class="code-example">
+              <div class="code-example-header">
+                <h4 class="code-example-title">Using CDN</h4>
+                <button class="code-example-btn" onclick="copyCode('cdn-code')">
+                  Copy
+                </button>
+              </div>
+              <pre><code id="cdn-code">&lt;script src="https://cdn.jsdelivr.net/npm/futoast@1.0.0/dist/futoast.min.js"&gt;&lt;/script&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="tab-content" id="npm">
+            <div class="code-example">
+              <div class="code-example-header">
+                <h4 class="code-example-title">Using NPM</h4>
+                <button class="code-example-btn" onclick="copyCode('npm-code')">
+                  Copy
+                </button>
+              </div>
+              <pre><code id="npm-code">npm install futoast</code></pre>
+            </div>
+            <div class="code-example mt-3">
+              <div class="code-example-header">
+                <h4 class="code-example-title">Import in your project</h4>
+                <button
+                  class="code-example-btn"
+                  onclick="copyCode('import-code')"
+                >
+                  Copy
+                </button>
+              </div>
+              <pre><code id="import-code">import Futoast from 'futoast';</code></pre>
+            </div>
+          </div>
+
+          <div class="tab-content" id="download">
+            <div class="code-example">
+              <div class="code-example-header">
+                <h4 class="code-example-title">Download</h4>
+                <button
+                  class="code-example-btn"
+                  onclick="copyCode('download-code')"
+                >
+                  Copy
+                </button>
+              </div>
+              <pre><code id="download-code"># Download from GitHub
+wget https://github.com/yourusername/futoast/releases/download/v1.0.0/futoast.min.js</code></pre>
+            </div>
+            <p class="mt-2">Then include it in your HTML:</p>
+            <pre><code>&lt;script src="path/to/futoast.min.js"&gt;&lt;/script&gt;</code></pre>
+          </div>
+        </section>
+
+        <!-- Usage Section -->
+        <section id="usage" class="section">
+          <h2>Basic Usage</h2>
+          <p>
+            After including Futoast, you can start showing notifications with a
+            simple API call.
+          </p>
+
+          <div class="code-example mt-3">
+            <div class="code-example-header">
+              <h4 class="code-example-title">Basic Example</h4>
+              <button
+                class="code-example-btn"
+                onclick="copyCode('basic-usage-code')"
+              >
+                Copy
+              </button>
+            </div>
+            <pre><code id="basic-usage-code">// Show a simple notification
+Futoast.show('Hello, World!');
+
+// Show a success notification
+Futoast.success('Operation completed successfully!');
+
+// Show an error notification with options
+Futoast.error('Something went wrong!', {
+    timeout: 8000,
+    position: 'top-center'
+});</code></pre>
+          </div>
+
+          <div class="demo-buttons mt-3">
+            <button class="btn btn-sm btn-primary" onclick="demoBasic()">
+              Show Basic Toast
+            </button>
+            <button class="btn btn-sm btn-primary" onclick="demoSuccess()">
+              Show Success Toast
+            </button>
+            <button class="btn btn-sm btn-primary" onclick="demoError()">
+              Show Error Toast
+            </button>
+          </div>
+        </section>
+
+        <!-- Framework Support -->
+        <section id="framework-support" class="section">
+          <h2>Framework Support</h2>
+          <p>
+            Futoast provides dedicated integration for popular JavaScript
+            frameworks.
+          </p>
+
+          <div class="tabs mt-3">
+            <div class="tab active" data-tab="react">React</div>
+            <div class="tab" data-tab="vue">Vue</div>
+            <div class="tab" data-tab="angular">Angular</div>
+            <div class="tab" data-tab="django">Django</div>
+          </div>
+
+          <div class="tab-content active" id="react">
+            <div class="code-example">
+              <div class="code-example-header">
+                <h4 class="code-example-title">React Hook</h4>
+                <button
+                  class="code-example-btn"
+                  onclick="copyCode('react-hook-code')"
+                >
+                  Copy
+                </button>
+              </div>
+              <pre><code id="react-hook-code">import { useFutoast, FutoastContainer } from 'futoast';
+
+function MyComponent() {
+    const futoast = useFutoast();
+    
+    const handleClick = () => {
+        futoast.success('Action completed!');
+    };
+    
+    return (
+        &lt;div&gt;
+            &lt;button onClick={handleClick}&gt;Show Toast&lt;/button&gt;
+            &lt;FutoastContainer /&gt;
+        &lt;/div&gt;
+    );
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="tab-content" id="vue">
+            <div class="code-example">
+              <div class="code-example-header">
+                <h4 class="code-example-title">Vue Plugin</h4>
+                <button
+                  class="code-example-btn"
+                  onclick="copyCode('vue-plugin-code')"
+                >
+                  Copy
+                </button>
+              </div>
+              <pre><code id="vue-plugin-code">import Vue from 'vue';
+import Futoast from 'futoast';
+
+// Install plugin
+Vue.use(Futoast.Vue);
+
+// In component
+export default {
+    methods: {
+        showToast() {
+            this.$futoast.success('Action completed!');
+            // or this.$toast.success('Action completed!');
+        }
+    }
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="tab-content" id="angular">
+            <div class="code-example">
+              <div class="code-example-header">
+                <h4 class="code-example-title">Angular Service</h4>
+                <button
+                  class="code-example-btn"
+                  onclick="copyCode('angular-service-code')"
+                >
+                  Copy
+                </button>
+              </div>
+              <pre><code id="angular-service-code">import { Component } from '@angular/core';
+import { Futoast } from 'futoast';
+
+@Component({
+    selector: 'app-my-component',
+    template: `&lt;button (click)="showToast()"&gt;Show Toast&lt;/button&gt;`
+})
+export class MyComponent {
+    constructor(private futoast: Futoast) {}
+    
+    showToast() {
+        this.futoast.success('Action completed!');
+    }
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="tab-content" id="django">
+            <div class="code-example">
+              <div class="code-example-header">
+                <h4 class="code-example-title">Django Template</h4>
+                <button
+                  class="code-example-btn"
+                  onclick="copyCode('django-template-code')"
+                >
+                  Copy
+                </button>
+              </div>
+              <pre><code id="django-template-code">{% load static %}
+
+&lt;!-- Include Futoast --&gt;
+&lt;script src="{% static 'js/Futoast' %}"&gt;&lt;/script&gt;
+
+&lt;!-- Show toast from Django messages --&gt;
+{% if messages %}
+    {% for message in messages %}
+        &lt;script&gt;
+            Futoast.{{ message.tags }}('{{ message }}');
+        &lt;/script&gt;
+    {% endfor %}
+{% endif %}</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- Positioning -->
+        <section id="positioning" class="section">
+          <h2>Positioning</h2>
+          <p>
+            Notifications can be positioned in different areas of the screen.
+          </p>
+
+          <div class="code-example mt-3">
+            <div class="code-example-header">
+              <h4 class="code-example-title">Position Options</h4>
+              <button
+                class="code-example-btn"
+                onclick="copyCode('position-code')"
+              >
+                Copy
+              </button>
+            </div>
+            <pre><code id="position-code">// Top right (default)
+Futoast.show('Top right', { position: 'top-right' });
+
+// Top center
+Futoast.show('Top center', { position: 'top-center' });
+
+// Top left
+Futoast.show('Top left', { position: 'top-left' });
+
+// Bottom right
+Futoast.show('Bottom right', { position: 'bottom-right' });
+
+// Bottom center
+Futoast.show('Bottom center', { position: 'bottom-center' });
+
+// Bottom left
+Futoast.show('Bottom left', { position: 'bottom-left' });</code></pre>
+          </div>
+
+          <div class="demo-buttons mt-3">
+            <button
+              class="btn btn-sm btn-primary"
+              onclick="demoPosition('top-right')"
+            >
+              Top Right
+            </button>
+            <button
+              class="btn btn-sm btn-primary"
+              onclick="demoPosition('top-center')"
+            >
+              Top Center
+            </button>
+            <button
+              class="btn btn-sm btn-primary"
+              onclick="demoPosition('top-left')"
+            >
+              Top Left
+            </button>
+            <button
+              class="btn btn-sm btn-primary"
+              onclick="demoPosition('bottom-right')"
+            >
+              Bottom Right
+            </button>
+            <button
+              class="btn btn-sm btn-primary"
+              onclick="demoPosition('bottom-center')"
+            >
+              Bottom Center
+            </button>
+            <button
+              class="btn btn-sm btn-primary"
+              onclick="demoPosition('bottom-left')"
+            >
+              Bottom Left
+            </button>
+          </div>
+
+          <div class="alert alert-warning mt-3">
+            <strong>Mobile Behavior:</strong> On mobile devices, you can specify
+            a different position using the mobilePosition option (either 'top',
+            'bottom', or 'same').
+          </div>
+        </section>
+
+        <!-- Notification Types -->
+        <section id="types" class="section">
+          <h2>Notification Types</h2>
+          <p>
+            Futoast provides several built-in notification types with different
+            styles.
+          </p>
+
+          <div class="code-example mt-3">
+            <div class="code-example-header">
+              <h4 class="code-example-title">Type Examples</h4>
+              <button class="code-example-btn" onclick="copyCode('types-code')">
+                Copy
+              </button>
+            </div>
+            <pre><code id="types-code">// Primary (default)
+Futoast.primary('Primary notification');
+Futoast.show('Primary notification', { type: 'primary' });
+
+// Secondary
+Futoast.secondary('Secondary notification');
+
+// Success
+Futoast.success('Success notification');
+
+// Error
+Futoast.error('Error notification');
+
+// Warning
+Futoast.warning('Warning notification');
+
+// Info
+Futoast.info('Info notification');
+
+// Question
+Futoast.question('Question notification');
+
+// Loading (no timeout)
+Futoast.loading('Processing...');</code></pre>
+          </div>
+
+          <div class="demo-buttons mt-3">
+            <button
+              class="btn btn-sm btn-primary"
+              onclick="demoType('primary')"
+            >
+              Primary
+            </button>
+            <button
+              class="btn btn-sm btn-secondary"
+              onclick="demoType('secondary')"
+            >
+              Secondary
+            </button>
+            <button
+              class="btn btn-sm btn-success"
+              onclick="demoType('success')"
+            >
+              Success
+            </button>
+            <button class="btn btn-sm btn-danger" onclick="demoType('error')">
+              Error
+            </button>
+            <button
+              class="btn btn-sm btn-warning"
+              onclick="demoType('warning')"
+            >
+              Warning
+            </button>
+            <button class="btn btn-sm btn-info" onclick="demoType('info')">
+              Info
+            </button>
+            <button
+              class="btn btn-sm btn-primary"
+              onclick="demoType('question')"
+            >
+              Question
+            </button>
+            <button
+              class="btn btn-sm btn-primary"
+              onclick="demoType('loading')"
+            >
+              Loading
+            </button>
+          </div>
+        </section>
+
+        <!-- Animations -->
+        <section id="animations" class="section">
+          <h2>Animations</h2>
+          <p>
+            Customize how notifications appear and disappear with different
+            animations.
+          </p>
+
+          <div class="code-example mt-3">
+            <div class="code-example-header">
+              <h4 class="code-example-title">Animation Options</h4>
+              <button
+                class="code-example-btn"
+                onclick="copyCode('animations-code')"
+              >
+                Copy
+              </button>
+            </div>
+            <pre><code id="animations-code">// Fade in/out (default)
+Futoast.show('Fade animation', {
+    animationIn: 'fadeIn',
+    animationOut: 'fadeOut'
+});
+
+// Slide from right
+Futoast.show('Slide from right', {
+    animationIn: 'slideInRight',
+    animationOut: 'fadeOut'
+});
+
+// Zoom in
+Futoast.show('Zoom in', {
+    animationIn: 'zoomIn',
+    animationOut: 'fadeOut'
+});
+
+// Bounce
+Futoast.show('Bounce', {
+    animationIn: 'bounce',
+    animationOut: 'fadeOut'
+});
+
+// Flip
+Futoast.show('Flip', {
+    animationIn: 'flip',
+    animationOut: 'fadeOut'
+});
+
+// Pulse (continuous animation)
+Futoast.show('Pulse', {
+    animationIn: 'pulse',
+    animationOut: 'fadeOut'
+});</code></pre>
+          </div>
+
+          <div class="demo-buttons mt-3">
+            <button
+              class="btn btn-sm btn-primary"
+              onclick="demoAnimation('fadeIn', 'fadeOut')"
+            >
+              Fade
+            </button>
+            <button
+              class="btn btn-sm btn-primary"
+              onclick="demoAnimation('slideInRight', 'fadeOut')"
+            >
+              Slide Right
+            </button>
+            <button
+              class="btn btn-sm btn-primary"
+              onclick="demoAnimation('slideInLeft', 'fadeOut')"
+            >
+              Slide Left
+            </button>
+            <button
+              class="btn btn-sm btn-primary"
+              onclick="demoAnimation('zoomIn', 'fadeOut')"
+            >
+              Zoom
+            </button>
+            <button
+              class="btn btn-sm btn-primary"
+              onclick="demoAnimation('bounce', 'fadeOut')"
+            >
+              Bounce
+            </button>
+            <button
+              class="btn btn-sm btn-primary"
+              onclick="demoAnimation('flip', 'fadeOut')"
+            >
+              Flip
+            </button>
+            <button
+              class="btn btn-sm btn-primary"
+              onclick="demoAnimation('pulse', 'fadeOut')"
+            >
+              Pulse
+            </button>
+          </div>
+        </section>
+
+        <!-- Icons -->
+        <section id="icons" class="section">
+          <h2>Custom Icons</h2>
+          <p>Customize or disable icons in your notifications.</p>
+
+          <div class="code-example mt-3">
+            <div class="code-example-header">
+              <h4 class="code-example-title">Icon Options</h4>
+              <button class="code-example-btn" onclick="copyCode('icons-code')">
+                Copy
+              </button>
+            </div>
+            <pre><code id="icons-code">// Use default icon for type
+Futoast.success('With default icon');
+
+// Disable icon
+Futoast.success('No icon', { icon: false });
+
+// Custom text icon
+Futoast.success('Custom text icon', { icon: '★' });
+
+// Custom emoji icon
+Futoast.success('Custom emoji icon', { icon: '🚀' });
+
+// Custom image icon
+Futoast.success('Custom image icon', { 
+    icon: '/path/to/icon.png' 
+});
+
+// Custom HTML icon
+Futoast.success('Custom HTML icon', { 
+    icon: '&lt;i class="fas fa-check-circle"&gt;&lt;/i&gt;' 
+});
+
+// Change default icons globally
+Futoast.setIcons({
+    success: '✓',
+    error: '✗',
+    warning: '⚠️',
+    info: 'ℹ️'
+});</code></pre>
+          </div>
+
+          <div class="demo-buttons mt-3">
+            <button
+              class="btn btn-sm btn-primary"
+              onclick="demoIcon('default')"
+            >
+              Default
+            </button>
+            <button class="btn btn-sm btn-primary" onclick="demoIcon('none')">
+              No Icon
+            </button>
+            <button class="btn btn-sm btn-primary" onclick="demoIcon('text')">
+              Text Icon
+            </button>
+            <button class="btn btn-sm btn-primary" onclick="demoIcon('emoji')">
+              Emoji Icon
+            </button>
+            <button class="btn btn-sm btn-primary" onclick="demoIcon('html')">
+              HTML Icon
+            </button>
+          </div>
+        </section>
+
+        <!-- Theming -->
+        <section id="theming" class="section">
+          <h2>Theming</h2>
+          <p>Customize the look and feel to match your application's design.</p>
+
+          <div class="tabs mt-3">
+            <div class="tab active" data-tab="theme-colors">Colors</div>
+            <div class="tab" data-tab="theme-dark">Dark Mode</div>
+            <div class="tab" data-tab="theme-fonts">Fonts</div>
+          </div>
+
+          <div class="tab-content active" id="theme-colors">
+            <div class="code-example">
+              <div class="code-example-header">
+                <h4 class="code-example-title">Custom Colors</h4>
+                <button
+                  class="code-example-btn"
+                  onclick="copyCode('theme-colors-code')"
+                >
+                  Copy
+                </button>
+              </div>
+              <pre><code id="theme-colors-code">// Change primary color
+Futoast.applyTheme({
+    primary: '#8a2be2' // Purple
+});
+
+// Change multiple colors
+Futoast.applyTheme({
+    primary: '#8a2be2',
+    success: '#28a745',
+    error: '#dc3545',
+    warning: '#fd7e14',
+    info: '#17a2b8'
+});
+
+// Change background and text
+Futoast.applyTheme({
+    bg: '#f8f9fa',
+    text: '#212529',
+    border: '#dee2e6'
+});</code></pre>
+            </div>
+            <div class="demo-buttons mt-3">
+              <button
+                class="btn btn-sm btn-primary"
+                onclick="demoTheme('default')"
+              >
+                Default Theme
+              </button>
+              <button
+                class="btn btn-sm btn-primary"
+                onclick="demoTheme('purple')"
+              >
+                Purple Theme
+              </button>
+              <button
+                class="btn btn-sm btn-primary"
+                onclick="demoTheme('dark')"
+              >
+                Dark Colors
+              </button>
+              <button
+                class="btn btn-sm btn-primary"
+                onclick="demoTheme('light')"
+              >
+                Light Colors
+              </button>
+            </div>
+          </div>
+
+          <div class="tab-content" id="theme-dark">
+            <div class="code-example">
+              <div class="code-example-header">
+                <h4 class="code-example-title">Dark Mode</h4>
+                <button
+                  class="code-example-btn"
+                  onclick="copyCode('theme-dark-code')"
+                >
+                  Copy
+                </button>
+              </div>
+              <pre><code id="theme-dark-code">// Set dark mode
+Futoast.setThemeMode('dark');
+
+// Set light mode
+Futoast.setThemeMode('light');
+
+// Toggle based on system preference
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    Futoast.setThemeMode('dark');
+} else {
+    Futoast.setThemeMode('light');
+}</code></pre>
+            </div>
+            <div class="demo-buttons mt-3">
+              <button
+                class="btn btn-sm btn-primary"
+                onclick="Futoast.setThemeMode('light')"
+              >
+                Light Mode
+              </button>
+              <button
+                class="btn btn-sm btn-primary"
+                onclick="Futoast.setThemeMode('dark')"
+              >
+                Dark Mode
+              </button>
+            </div>
+          </div>
+
+          <div class="tab-content" id="theme-fonts">
+            <div class="code-example">
+              <div class="code-example-header">
+                <h4 class="code-example-title">Custom Fonts</h4>
+                <button
+                  class="code-example-btn"
+                  onclick="copyCode('theme-fonts-code')"
+                >
+                  Copy
+                </button>
+              </div>
+              <pre><code id="theme-fonts-code">// Set custom font family
+Futoast.setFont('"Comic Sans MS", cursive');
+
+// Set custom font size
+Futoast.setFont('Arial', '14px');
+
+// Reset to default
+Futoast.setFont('', '');</code></pre>
+            </div>
+            <div class="demo-buttons mt-3">
+              <button
+                class="btn btn-sm btn-primary"
+                onclick="demoFont('default')"
+              >
+                Default Font
+              </button>
+              <button
+                class="btn btn-sm btn-primary"
+                onclick="demoFont('comic')"
+              >
+                Comic Sans
+              </button>
+              <button class="btn btn-sm btn-primary" onclick="demoFont('mono')">
+                Monospace
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Responsive -->
+        <section id="responsive" class="section">
+          <h2>Responsive Behavior</h2>
+          <p>
+            Futoast automatically adapts to different screen sizes with
+            mobile-specific options.
+          </p>
+
+          <div class="code-example mt-3">
+            <div class="code-example-header">
+              <h4 class="code-example-title">Responsive Options</h4>
+              <button
+                class="code-example-btn"
+                onclick="copyCode('responsive-code')"
+              >
+                Copy
+              </button>
+            </div>
+            <pre><code id="responsive-code">// Different position on mobile
+Futoast.show('Top on desktop, bottom on mobile', {
+    position: 'top-right',
+    mobilePosition: 'bottom'
+});
+
+// Custom width on mobile
+Futoast.show('Custom mobile width', {
+    maxWidth: '350px',
+    mobileMaxWidth: '95%',
+    mobileMinWidth: '90%'
+});
+
+// Disable responsiveness
+Futoast.show('Same on all devices', {
+    mobilePosition: 'same',
+    mobileMaxWidth: '350px'
+});</code></pre>
+          </div>
+
+          <div class="alert alert-primary mt-3">
+            <strong>Tip:</strong> Resize your browser window to see how the
+            toasts adapt to different screen sizes.
+          </div>
+        </section>
+
+        <!-- Advanced Features -->
+        <section id="advanced" class="section">
+          <h2>Advanced Features</h2>
+          <p>Futoast provides many advanced features for complex use cases.</p>
+
+          <div class="tabs mt-3">
+            <div class="tab active" data-tab="advanced-progress">
+              Progress Bar
+            </div>
+            <div class="tab" data-tab="advanced-buttons">Action Buttons</div>
+            <div class="tab" data-tab="advanced-drag">Drag & Drop</div>
+            <div class="tab" data-tab="advanced-queue">Queue</div>
+            <div class="tab" data-tab="advanced-overlay">Overlay</div>
+          </div>
+
+          <div class="tab-content active" id="advanced-progress">
+            <div class="code-example">
+              <div class="code-example-header">
+                <h4 class="code-example-title">Progress Bar</h4>
+                <button
+                  class="code-example-btn"
+                  onclick="copyCode('progress-code')"
+                >
+                  Copy
+                </button>
+              </div>
+              <pre><code id="progress-code">// Default progress bar (shows time remaining)
+Futoast.show('With progress bar', {
+    progressBar: true,
+    timeout: 5000
+});
+
+// Custom progress bar color
+Futoast.show('Custom progress color', {
+    progressBar: true,
+    timeout: 5000,
+    css: '--futoast-progress: rgba(255,255,255,0.5);'
+});
+
+// Disable progress bar
+Futoast.show('No progress bar', {
+    progressBar: false,
+    timeout: 5000
+});
+
+// Pause on hover
+Futoast.show('Pause on hover', {
+    progressBar: true,
+    timeout: 5000,
+    pauseOnHover: true
+});</code></pre>
+            </div>
+            <div class="demo-buttons mt-3">
+              <button
+                class="btn btn-sm btn-primary"
+                onclick="demoProgress('default')"
+              >
+                Default
+              </button>
+              <button
+                class="btn btn-sm btn-primary"
+                onclick="demoProgress('custom')"
+              >
+                Custom Color
+              </button>
+              <button
+                class="btn btn-sm btn-primary"
+                onclick="demoProgress('none')"
+              >
+                No Progress
+              </button>
+              <button
+                class="btn btn-sm btn-primary"
+                onclick="demoProgress('pause')"
+              >
+                Pause on Hover
+              </button>
+            </div>
+          </div>
+
+          <div class="tab-content" id="advanced-buttons">
+            <div class="code-example">
+              <div class="code-example-header">
+                <h4 class="code-example-title">Action Buttons</h4>
+                <button
+                  class="code-example-btn"
+                  onclick="copyCode('buttons-code')"
+                >
+                  Copy
+                </button>
+              </div>
+              <pre><code id="buttons-code">// Single button
+Futoast.show('Action required', {
+    buttons: [
+        {
+            text: 'Retry',
+            action: () => {
+                console.log('Retry clicked');
+            }
+        }
+    ]
+});
+
+// Multiple buttons
+Futoast.show('Choose an option', {
+    buttons: [
+        {
+            text: 'Accept',
+            class: 'success',
+            action: () => {
+                console.log('Accepted');
+            }
+        },
+        {
+            text: 'Reject',
+            class: 'danger',
+            action: () => {
+                console.log('Rejected');
+            },
+            closeOnClick: false
+        }
+    ]
+});
+
+// Custom styled buttons
+Futoast.show('Custom buttons', {
+    buttons: [
+        {
+            text: 'Custom',
+            style: 'background: linear-gradient(to right, #ff8a00, #da1b60); color: white;',
+            action: () => {
+                console.log('Custom button clicked');
+            }
+        }
+    ]
+});</code></pre>
+            </div>
+            <div class="demo-buttons mt-3">
+              <button
+                class="btn btn-sm btn-primary"
+                onclick="demoButtons('single')"
+              >
+                Single Button
+              </button>
+              <button
+                class="btn btn-sm btn-primary"
+                onclick="demoButtons('multiple')"
+              >
+                Multiple Buttons
+              </button>
+              <button
+                class="btn btn-sm btn-primary"
+                onclick="demoButtons('custom')"
+              >
+                Custom Button
+              </button>
+            </div>
+          </div>
+
+          <div class="tab-content" id="advanced-drag">
+            <div class="code-example">
+              <div class="code-example-header">
+                <h4 class="code-example-title">Drag & Drop</h4>
+                <button
+                  class="code-example-btn"
+                  onclick="copyCode('drag-code')"
+                >
+                  Copy
+                </button>
+              </div>
+              <pre><code id="drag-code">// Enable dragging
+Futoast.show('Drag me around', {
+    draggable: true
+});
+
+// Draggable with custom cursor
+Futoast.show('Custom drag cursor', {
+    draggable: true,
+    css: 'cursor: move;'
+});</code></pre>
+            </div>
+            <div class="demo-buttons mt-3">
+              <button
+                class="btn btn-sm btn-primary"
+                onclick="demoDrag('default')"
+              >
+                Draggable
+              </button>
+              <button
+                class="btn btn-sm btn-primary"
+                onclick="demoDrag('cursor')"
+              >
+                Custom Cursor
+              </button>
+            </div>
+          </div>
+
+          <div class="tab-content" id="advanced-queue">
+            <div class="code-example">
+              <div class="code-example-header">
+                <h4 class="code-example-title">Notification Queue</h4>
+                <button
+                  class="code-example-btn"
+                  onclick="copyCode('queue-code')"
+                >
+                  Copy
+                </button>
+              </div>
+              <pre><code id="queue-code">// Queue multiple notifications
+Futoast.show('First message', { queue: true });
+Futoast.show('Second message', { queue: true });
+Futoast.show('Third message', { queue: true });
+
+// Disable queue (show all at once)
+Futoast.show('First message', { queue: false });
+Futoast.show('Second message', { queue: false });
+Futoast.show('Third message', { queue: false });</code></pre>
+            </div>
+            <div class="demo-buttons mt-3">
+              <button
+                class="btn btn-sm btn-primary"
+                onclick="demoQueue('queued')"
+              >
+                Queued
+              </button>
+              <button
+                class="btn btn-sm btn-primary"
+                onclick="demoQueue('simultaneous')"
+              >
+                Simultaneous
+              </button>
+            </div>
+          </div>
+
+          <div class="tab-content" id="advanced-overlay">
+            <div class="code-example">
+              <div class="code-example-header">
+                <h4 class="code-example-title">Overlay</h4>
+                <button
+                  class="code-example-btn"
+                  onclick="copyCode('overlay-code')"
+                >
+                  Copy
+                </button>
+              </div>
+              <pre><code id="overlay-code">// Show with overlay
+Futoast.show('Important message', {
+    overlay: true,
+    overlayColor: 'rgba(0,0,0,0.7)'
+});
+
+// Show with click-to-close overlay
+Futoast.show('Click overlay to close', {
+    overlay: true,
+    overlayClose: true
+});
+
+// Custom overlay color
+Futoast.show('Custom overlay', {
+    overlay: true,
+    overlayColor: 'rgba(255,0,0,0.3)'
+});</code></pre>
+            </div>
+            <div class="demo-buttons mt-3">
+              <button
+                class="btn btn-sm btn-primary"
+                onclick="demoOverlay('default')"
+              >
+                Default Overlay
+              </button>
+              <button
+                class="btn btn-sm btn-primary"
+                onclick="demoOverlay('close')"
+              >
+                Click to Close
+              </button>
+              <button
+                class="btn btn-sm btn-primary"
+                onclick="demoOverlay('custom')"
+              >
+                Custom Overlay
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- API Reference -->
+        <section id="api" class="section">
+          <h2>API Reference</h2>
+          <p>Complete reference of all available methods and options.</p>
+
+          <h3 id="api-methods" class="mt-4">Methods</h3>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Method</th>
+                  <th>Description</th>
+                  <th>Returns</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>show(message, options)</code></td>
+                  <td>Display a toast notification</td>
+                  <td>Promise</td>
+                </tr>
+                <tr>
+                  <td><code>primary(message, options)</code></td>
+                  <td>Display a primary toast (shortcut)</td>
+                  <td>Promise</td>
+                </tr>
+                <tr>
+                  <td><code>secondary(message, options)</code></td>
+                  <td>Display a secondary toast (shortcut)</td>
+                  <td>Promise</td>
+                </tr>
+                <tr>
+                  <td><code>success(message, options)</code></td>
+                  <td>Display a success toast (shortcut)</td>
+                  <td>Promise</td>
+                </tr>
+                <tr>
+                  <td><code>error(message, options)</code></td>
+                  <td>Display an error toast (shortcut)</td>
+                  <td>Promise</td>
+                </tr>
+                <tr>
+                  <td><code>warning(message, options)</code></td>
+                  <td>Display a warning toast (shortcut)</td>
+                  <td>Promise</td>
+                </tr>
+                <tr>
+                  <td><code>info(message, options)</code></td>
+                  <td>Display an info toast (shortcut)</td>
+                  <td>Promise</td>
+                </tr>
+                <tr>
+                  <td><code>question(message, options)</code></td>
+                  <td>Display a question toast (shortcut)</td>
+                  <td>Promise</td>
+                </tr>
+                <tr>
+                  <td><code>loading(message, options)</code></td>
+                  <td>Display a loading toast (no timeout)</td>
+                  <td>Promise</td>
+                </tr>
+                <tr>
+                  <td><code>clear()</code></td>
+                  <td>Remove all active toasts</td>
+                  <td>void</td>
+                </tr>
+                <tr>
+                  <td><code>setIcons(icons)</code></td>
+                  <td>Change default icons</td>
+                  <td>Futoast</td>
+                </tr>
+                <tr>
+                  <td><code>applyTheme(themeConfig)</code></td>
+                  <td>Change color theme</td>
+                  <td>Futoast</td>
+                </tr>
+                <tr>
+                  <td><code>setThemeMode(mode)</code></td>
+                  <td>Set light/dark mode ('light' or 'dark')</td>
+                  <td>Futoast</td>
+                </tr>
+                <tr>
+                  <td><code>setFont(fontFamily, fontSize)</code></td>
+                  <td>Change font family and size</td>
+                  <td>Futoast</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 id="api-options" class="mt-4">Options</h3>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Option</th>
+                  <th>Type</th>
+                  <th>Default</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>position</code></td>
+                  <td>string</td>
+                  <td>'top-right'</td>
+                  <td>
+                    Position of toast ('top-right', 'top-left', 'top-center',
+                    'bottom-right', 'bottom-left', 'bottom-center')
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>timeout</code></td>
+                  <td>number</td>
+                  <td>5000</td>
+                  <td>Time in ms before toast disappears (0 = no timeout)</td>
+                </tr>
+                <tr>
+                  <td><code>type</code></td>
+                  <td>string</td>
+                  <td>'primary'</td>
+                  <td>
+                    Toast type ('primary', 'secondary', 'success', 'error',
+                    'warning', 'info', 'question', 'loading')
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>theme</code></td>
+                  <td>string</td>
+                  <td>'light'</td>
+                  <td>Color theme ('light' or 'dark')</td>
+                </tr>
+                <tr>
+                  <td><code>icon</code></td>
+                  <td>string|boolean</td>
+                  <td>null</td>
+                  <td>Custom icon (string/HTML) or false to hide</td>
+                </tr>
+                <tr>
+                  <td><code>closeButton</code></td>
+                  <td>boolean</td>
+                  <td>true</td>
+                  <td>Show close button</td>
+                </tr>
+                <tr>
+                  <td><code>pauseOnHover</code></td>
+                  <td>boolean</td>
+                  <td>true</td>
+                  <td>Pause timeout on hover</td>
+                </tr>
+                <tr>
+                  <td><code>draggable</code></td>
+                  <td>boolean</td>
+                  <td>false</td>
+                  <td>Allow dragging the toast</td>
+                </tr>
+                <tr>
+                  <td><code>progressBar</code></td>
+                  <td>boolean</td>
+                  <td>true</td>
+                  <td>Show progress bar</td>
+                </tr>
+                <tr>
+                  <td><code>sound</code></td>
+                  <td>boolean</td>
+                  <td>false</td>
+                  <td>Play default sound for type</td>
+                </tr>
+                <tr>
+                  <td><code>html</code></td>
+                  <td>boolean</td>
+                  <td>false</td>
+                  <td>Allow HTML in message</td>
+                </tr>
+                <tr>
+                  <td><code>animationIn</code></td>
+                  <td>string</td>
+                  <td>'fadeIn'</td>
+                  <td>
+                    Animation when showing ('fadeIn', 'slideInRight',
+                    'slideInLeft', 'zoomIn', 'bounce', 'flip')
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>animationOut</code></td>
+                  <td>string</td>
+                  <td>'fadeOut'</td>
+                  <td>
+                    Animation when hiding ('fadeOut', 'slideOutRight',
+                    'slideOutLeft', 'zoomOut')
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>onClick</code></td>
+                  <td>function</td>
+                  <td>null</td>
+                  <td>Callback when toast is clicked</td>
+                </tr>
+                <tr>
+                  <td><code>onClose</code></td>
+                  <td>function</td>
+                  <td>null</td>
+                  <td>Callback when toast is closed</td>
+                </tr>
+                <tr>
+                  <td><code>onShow</code></td>
+                  <td>function</td>
+                  <td>null</td>
+                  <td>Callback when toast is shown</td>
+                </tr>
+                <tr>
+                  <td><code>onTimeout</code></td>
+                  <td>function</td>
+                  <td>null</td>
+                  <td>Callback when toast times out</td>
+                </tr>
+                <tr>
+                  <td><code>rtl</code></td>
+                  <td>boolean</td>
+                  <td>false</td>
+                  <td>Right-to-left layout</td>
+                </tr>
+                <tr>
+                  <td><code>css</code></td>
+                  <td>string</td>
+                  <td>''</td>
+                  <td>Custom CSS styles for toast</td>
+                </tr>
+                <tr>
+                  <td><code>queue</code></td>
+                  <td>boolean</td>
+                  <td>true</td>
+                  <td>Queue multiple toasts or show simultaneously</td>
+                </tr>
+                <tr>
+                  <td><code>zIndex</code></td>
+                  <td>number</td>
+                  <td>999999</td>
+                  <td>z-index for toast container</td>
+                </tr>
+                <tr>
+                  <td><code>overlay</code></td>
+                  <td>boolean</td>
+                  <td>false</td>
+                  <td>Show overlay behind toasts</td>
+                </tr>
+                <tr>
+                  <td><code>overlayClose</code></td>
+                  <td>boolean</td>
+                  <td>false</td>
+                  <td>Close all toasts when overlay is clicked</td>
+                </tr>
+                <tr>
+                  <td><code>overlayColor</code></td>
+                  <td>string</td>
+                  <td>'rgba(0,0,0,0.5)'</td>
+                  <td>Color for overlay</td>
+                </tr>
+                <tr>
+                  <td><code>customIcon</code></td>
+                  <td>string</td>
+                  <td>null</td>
+                  <td>Custom icon (overrides icon option)</td>
+                </tr>
+                <tr>
+                  <td><code>customSound</code></td>
+                  <td>string</td>
+                  <td>null</td>
+                  <td>URL to custom sound file</td>
+                </tr>
+                <tr>
+                  <td><code>buttons</code></td>
+                  <td>array</td>
+                  <td>null</td>
+                  <td>
+                    Array of button objects (text, action, class, style,
+                    closeOnClick)
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>focus</code></td>
+                  <td>boolean</td>
+                  <td>true</td>
+                  <td>Focus toast when shown</td>
+                </tr>
+                <tr>
+                  <td><code>fontFamily</code></td>
+                  <td>string</td>
+                  <td>''</td>
+                  <td>Custom font family for toast</td>
+                </tr>
+                <tr>
+                  <td><code>fontSize</code></td>
+                  <td>string</td>
+                  <td>''</td>
+                  <td>Custom font size for toast</td>
+                </tr>
+                <tr>
+                  <td><code>maxWidth</code></td>
+                  <td>string</td>
+                  <td>'350px'</td>
+                  <td>Maximum width of toast</td>
+                </tr>
+                <tr>
+                  <td><code>minWidth</code></td>
+                  <td>string</td>
+                  <td>'300px'</td>
+                  <td>Minimum width of toast</td>
+                </tr>
+                <tr>
+                  <td><code>mobilePosition</code></td>
+                  <td>string</td>
+                  <td>'top'</td>
+                  <td>Position on mobile ('top', 'bottom', 'same')</td>
+                </tr>
+                <tr>
+                  <td><code>mobileMaxWidth</code></td>
+                  <td>string</td>
+                  <td>'90%'</td>
+                  <td>Maximum width on mobile</td>
+                </tr>
+                <tr>
+                  <td><code>mobileMinWidth</code></td>
+                  <td>string</td>
+                  <td>'80%'</td>
+                  <td>Minimum width on mobile</td>
+                </tr>
+                <tr>
+                  <td><code>ariaLive</code></td>
+                  <td>string</td>
+                  <td>'assertive'</td>
+                  <td>ARIA live attribute ('assertive', 'polite', 'off')</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 id="api-shortcuts" class="mt-4">Shortcut Methods</h3>
+          <p>
+            Futoast provides shortcut methods for common notification types:
+          </p>
+          <pre><code>Futoast.primary(message, options)
+Futoast.secondary(message, options)
+Futoast.success(message, options)
+Futoast.error(message, options)
+Futoast.warning(message, options)
+Futoast.info(message, options)
+Futoast.question(message, options)
+Futoast.loading(message, options)</code></pre>
+        </section>
+
+        <!-- Examples -->
+        <section id="examples" class="section">
+          <h2>Examples</h2>
+          <p>Practical examples demonstrating common use cases.</p>
+
+          <h3 id="examples-basic" class="mt-4">Basic Examples</h3>
+          <div class="code-example">
+            <div class="code-example-header">
+              <h4 class="code-example-title">Simple Notification</h4>
+              <button
+                class="code-example-btn"
+                onclick="copyCode('basic-example-code')"
+              >
+                Copy
+              </button>
+            </div>
+            <pre><code id="basic-example-code">// Simple notification
+Futoast.show('Welcome to our website!');
+
+// Success notification with icon
+Futoast.success('Your changes have been saved!');
+
+// Error notification with longer timeout
+Futoast.error('Failed to load data. Please try again.', {
+    timeout: 8000
+});</code></pre>
+          </div>
+
+          <div class="code-example mt-4">
+            <div class="code-example-header">
+              <h4 class="code-example-title">Notification with Action</h4>
+              <button
+                class="code-example-btn"
+                onclick="copyCode('action-example-code')"
+              >
+                Copy
+              </button>
+            </div>
+            <pre><code id="action-example-code">// Notification with click handler
+Futoast.show('Click me for details', {
+    onClick: () => {
+        window.open('/details', '_blank');
+    }
+});
+
+// Notification with buttons
+Futoast.show('Do you want to continue?', {
+    buttons: [
+        {
+            text: 'Yes',
+            action: () => {
+                console.log('User clicked Yes');
+            }
+        },
+        {
+            text: 'No',
+            action: () => {
+                console.log('User clicked No');
+            }
+        }
+    ]
+});</code></pre>
+          </div>
+
+          <h3 id="examples-advanced" class="mt-4">Advanced Examples</h3>
+          <div class="code-example">
+            <div class="code-example-header">
+              <h4 class="code-example-title">Custom HTML Content</h4>
+              <button
+                class="code-example-btn"
+                onclick="copyCode('html-example-code')"
+              >
+                Copy
+              </button>
+            </div>
+            <pre><code id="html-example-code">// Notification with HTML content
+Futoast.show('&lt;strong&gt;Important&lt;/strong&gt;: &lt;em&gt;System maintenance&lt;/em&gt; scheduled for tonight', {
+    html: true
+});
+
+// Custom styled notification
+Futoast.show('&lt;div style="display: flex; align-items: center;"&gt;&lt;img src="avatar.png" style="width: 40px; border-radius: 50%; margin-right: 10px;"&gt; New message from John&lt;/div&gt;', {
+    html: true,
+    css: 'background: linear-gradient(to right, #8e2de2, #4a00e0); color: white;'
+});</code></pre>
+          </div>
+
+          <div class="code-example mt-4">
+            <div class="code-example-header">
+              <h4 class="code-example-title">Loading Indicator</h4>
+              <button
+                class="code-example-btn"
+                onclick="copyCode('loading-example-code')"
+              >
+                Copy
+              </button>
+            </div>
+            <pre><code id="loading-example-code">// Show loading indicator
+const loadingToast = Futoast.loading('Processing your request...');
+
+// Later, replace with success/error
+setTimeout(() => {
+    Futoast.clear(); // Remove loading toast
+    Futoast.success('Processing complete!');
+}, 3000);</code></pre>
+          </div>
+
+          <h3 id="examples-frameworks" class="mt-4">Framework Examples</h3>
+          <div class="code-example">
+            <div class="code-example-header">
+              <h4 class="code-example-title">React Example</h4>
+              <button
+                class="code-example-btn"
+                onclick="copyCode('react-example-code')"
+              >
+                Copy
+              </button>
+            </div>
+            <pre><code id="react-example-code">import React from 'react';
+import { useFutoast, FutoastContainer } from 'futoast';
+
+function LoginForm() {
+    const futoast = useFutoast();
+    
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        
+        try {
+            futoast.loading('Logging in...');
+            await login(username, password);
+            futoast.success('Login successful!');
+        } catch (error) {
+            futoast.error(error.message);
+        }
+    };
+    
+    return (
+        &lt;&gt;
+            &lt;form onSubmit={handleSubmit}&gt;
+                {/* form fields */}
+                &lt;button type="submit"&gt;Login&lt;/button&gt;
+            &lt;/form&gt;
+            &lt;FutoastContainer /&gt;
+        &lt;/&gt;
+    );
+}</code></pre>
+          </div>
+
+          <div class="code-example mt-4">
+            <div class="code-example-header">
+              <h4 class="code-example-title">Vue Example</h4>
+              <button
+                class="code-example-btn"
+                onclick="copyCode('vue-example-code')"
+              >
+                Copy
+              </button>
+            </div>
+            <pre><code id="vue-example-code">&lt;template&gt;
+    &lt;button @click="handleClick"&gt;Save Changes&lt;/button&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+    methods: {
+        async handleClick() {
+            try {
+                this.$futoast.loading('Saving changes...');
+                await saveChanges();
+                this.$futoast.success('Changes saved successfully!');
+            } catch (error) {
+                this.$futoast.error('Failed to save changes');
+            }
+        }
+    }
+}
+&lt;/script&gt;</code></pre>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-links">
+          <a href="https://github.com/yourusername/futoast" target="_blank"
+            >GitHub</a
+          >
+          <a href="#" target="_blank">Documentation</a>
+          <a href="#" target="_blank">Examples</a>
+          <a href="#" target="_blank">License</a>
+        </div>
+        <div class="footer-copyright">&copy; 2023 Futoast - MIT License</div>
+      </div>
+    </footer>
+    <button class="topbtn"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
